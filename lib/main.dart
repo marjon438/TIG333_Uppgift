@@ -9,7 +9,10 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: MainView());
+    return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: MainView(),
+        theme: ThemeData(fontFamily: 'RobotoRegular'));
   }
 }
 
@@ -50,7 +53,7 @@ class MainView extends StatelessWidget {
   }
 
   List _list() {
-    return ['Write a book', 'Do homework', 'Tidy room', 'Watch TV'];
+    return ['Write a book', 'Do homework', 'Tidy room', 'Watch TV', 'Roboto'];
   }
 
   Widget _row(text) {
@@ -60,13 +63,16 @@ class MainView extends StatelessWidget {
         children: [
           Checkbox(value: false, onChanged: (bool? value) {}),
           Padding(
-              padding: const EdgeInsets.only(left: 10, bottom: 10, top: 10),
-              child: Text(text)),
+              padding: const EdgeInsets.only(left: 20, bottom: 20, top: 20),
+              child: Text(
+                text,
+                //style: TextStyle(fontFamily: ''),
+              )),
           const Expanded(
               child: Align(
                   alignment: Alignment.topRight,
                   child: Padding(
-                    padding: EdgeInsets.only(right: 10),
+                    padding: EdgeInsets.only(right: 20),
                     child: Icon(
                       Icons.delete_outline,
                     ),
